@@ -21,6 +21,16 @@ Activate virtual environment:
 ```bash
 sorce venv_name/bin/activate
 ```
+For linux - update packeges:
+```bash
+sudo apt-get update
+```
+```bash
+sudo apt-get install libpq-dev
+```
+```bash
+pip3 install --upgrade pip setuptools
+```
 Install requirements:
 ```bash
 pip3 install -r requirements.txt
@@ -29,7 +39,18 @@ pip3 install -r requirements.txt
 ## Usage
 
 Need change your secret key and database information in .env file
-
+For using PostgreSql - install it and create user and database:
+```bash
+apt install postgresql
+su - postgres
+createuser admin
+createdb admin
+```
+```bash
+psql
+alter user admin with encrypted password '1234';
+grant all privileges on database admin to admin;
+```
 Start project:
 ```bash
 cd application/
